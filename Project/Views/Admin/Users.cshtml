@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Project.Models.User>
+
+<div class="container lg-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="text-center">Users List</h3>
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>User ID</th>
+                                <th>UserName</th>
+                                <th>UserEmail</th>
+                                <th>Password</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                             <tr class="user-item" data-user-id="@item.UserId" data-user-name="@item.UserName" data-user-email="@item.Email" data-password =" @item.Password">
+ 
+                                    <td>@item.UserId</td>
+                                    <td>@item.UserName</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Password</td>
+                               </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="col-lg-4 mx-auto">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+                    <h3 class="text-center text-primary mb-4">Update Product</h3>
+
+                <form asp-action="cform" asp-controller="Admin" id="userform">
+
+                    <input type="hidden" name="UserId" id="UserId"/>
+                    <div class="form-group mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" id="UserName"  name="UserName" class="form-control" />
+                    </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">UserEmail</label>
+                            <input type="text" id="UserEmail" name="Email" class="form-control" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="text" id="Password" name="Password" class="form-control" />
+                        </div>
+
+                        <div class="d-inline-block">
+                            <button type="submit" name="action" class="btn btn-primary" onclick="User()" value="Insert">Insert</button>
+                            <button type="submit" name="action" class="btn btn-success" onclick="User()" value="Update">Update</button>
+                            <button type="submit" name="action" class="btn btn-danger" onclick="User()" value="Delete">Delete</button>
+
+
+
+                        </div>
+
+
+                </form>
+
+
+                    </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+            
+<script>
+
+    function User() {
+        var username = document.getElementById("UserName").value.trim();
+        var userEmail = document.getElementById("UserEmail").value.trim();
+        var userPassword = document.getElementById("Password").value.trim();
+        if (username === "" || userEmail === "" || userPassword === "") {
+            alert("Please Enter Username Or Email");
+        }
+        else {
+            document.getElementById("userform").submit();
+        }
+    }
+
+
+
+    document.querySelectorAll(".user-item").forEach(item => {
+        item.addEventListener('click', function () {
+
+            const uid = this.getAttribute('data-user-id');
+            const uname = this.getAttribute('data-user-name');
+            const uemail = this.getAttribute('data-user-email');
+            const upassword = this.getAttribute('data-password');
+            document.getElementById("UserId").value = uid;
+            document.getElementById("UserName").value = uname;
+            document.getElementById("UserEmail").value = uemail;
+            document.getElementById("Password").value = upassword;
+
+
+
+        });
+
+    });
+
+
+</script>

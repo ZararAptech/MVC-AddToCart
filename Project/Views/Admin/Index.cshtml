@@ -1,0 +1,121 @@
+﻿@model IEnumerable<Project.Models.Product>
+
+
+
+
+    <form asp-action="Users"asp-controller="Admin">
+    <button class="btn btn-primary" type="submit">Users</button>
+    </form>
+
+
+
+
+
+
+<h1>Products List</h1>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+<div class="container lg-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="text-center">Product List</h3>
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="product-item" data-product-id="@item.ProductId" data-product-name="@item.ProductName" data-product-price="@item.ProductPrice">
+                                    
+                                   <td>@item.ProductId</td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.ProductPrice</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mx-auto">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-4">
+                    <h3 class="text-center text-primary mb-4">Update Product</h3>
+                    <form asp-action="HandleForm" asp-controller="Admin" id="productForm">
+                        <input type="hidden" name="ProductId" id="ProductId"/>
+                        <div class="form-group mb-3">
+                            <label for="ProductName" class="form-label">Product Name:</label>
+                            <input type="text" id="ProductName" name="ProductName" class="form-control" >
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="ProductPrice" class="form-label">Product Price:</label>
+                            <input type="text" id="ProductPrice" name="ProductPrice" class="form-control" >
+                        </div>
+
+                       <div class="d-inline-block">
+                            <button class="btn btn-primary" onclick="checkandsubmit()" name="action" value="Insert" type="submit">Insert</button>
+                            <button class="btn btn-success" type="submit" name="action" onclick="checkandsubmit()" value="Update">Update</button>
+                            <button class="btn btn-danger" type="submit" name="action" onclick="checkandsubmit()" value="Delete">Delete</button>
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    function checkandsubmit() {
+     
+        var productName = document.getElementById("ProductName").value.trim();
+        var productPrice = document.getElementById("ProductPrice").value.trim();
+        if (productName === "" || productPrice === "") {
+            alert("Please fill in both Product Name and Product Price.");
+        } else {
+            document.getElementById("productForm").submit();
+        }
+    }
+
+
+
+    
+    document.querySelectorAll('.product-item').forEach(item => {
+        item.addEventListener('click', function () {
+            const productId = this.getAttribute('data-product-id');
+            const productName = this.getAttribute('data-product-name');
+            const productPrice = this.getAttribute('data-product-price');
+            document.getElementById('ProductId').value = productId;
+            document.getElementById('ProductName').value = productName;
+            document.getElementById('ProductPrice').value = productPrice;
+        });
+    });
+
+
+
+
+
+
+
+    
+
+
+
+</script>

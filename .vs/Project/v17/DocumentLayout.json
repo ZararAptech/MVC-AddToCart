@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ESHOP\\source\\repos\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5833FD05-2270-45A7-BCFC-7B53EB2B9780}|Project\\Project.csproj|c:\\users\\eshop\\source\\repos\\project\\project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5833FD05-2270-45A7-BCFC-7B53EB2B9780}|Project\\Project.csproj|solutionrelative:project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5833FD05-2270-45A7-BCFC-7B53EB2B9780}|Project\\Project.csproj|c:\\users\\eshop\\source\\repos\\project\\project\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5833FD05-2270-45A7-BCFC-7B53EB2B9780}|Project\\Project.csproj|solutionrelative:project\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 245,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ESHOP\\source\\repos\\Project\\Project\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Project\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ESHOP\\source\\repos\\Project\\Project\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Project\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAqwFAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T06:40:41.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\ESHOP\\source\\repos\\Project\\Project\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Project\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\ESHOP\\source\\repos\\Project\\Project\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Project\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T06:40:23.614Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

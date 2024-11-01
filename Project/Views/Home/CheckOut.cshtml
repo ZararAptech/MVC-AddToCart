@@ -1,0 +1,58 @@
+﻿@model List<Project.Models.ProductCartViewModel> 
+  
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">Checkout Items List</h3>
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>User ID</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th colspan="2" class="text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.UserId</td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.ProductPrice</td>
+                                    <td class="text-center">
+                                        <form asp-action="ConfirmOrder" method="post">
+                                            <input type="hidden" name="orderId" value="@item.ProductId" />
+                                            <button type="submit" class="btn btn-primary btn-sm">Confirm Order</button>
+                                        </form>
+                                    </td>
+                                    <td class="text-center">
+                                        <form asp-action="Delete" method="post">
+                                            <input type="hidden" name="productId" value="@item.ProductId" />
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form asp-action="Corders" asp-controller="Home">
+    <button class="btn btn-primary btn-lg" type="submit">Proceed to Check Confirm Orders</button>
+</form>
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success col-lg-4">
+        @TempData["SuccessMessage"]
+    </div>
+}
